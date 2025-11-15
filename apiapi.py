@@ -78,7 +78,6 @@ for case in request_cases:
 
                 df['조회조건'] = case["description"]
 
-                # 3. 리스트에 추가
                 all_data_frames.append(df)
                 print(f" {case['description']} 데이터 조회 성공")
             else:
@@ -94,6 +93,7 @@ if all_data_frames:
         final_df.to_excel(output_filename, index=False, engine='openpyxl')
         print(f"\n{output_filename}")
     except Exception as e:
-        print(f"\n엑셀 저장 중 오류 발생: {e}")
+        print(f"\n오류: {e}")
 else:
+
     print("\nx")
